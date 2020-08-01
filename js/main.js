@@ -7,10 +7,10 @@ function resize_handler()
 	canvas.height = window.innerWidth; 
 }
 
-window.onload = ()
+window.onload = function()
 {
+	alert('Loaded');
 	gl = canvas.getContext('webgl');
-	
 	document.addEventListener('resize', resize_handler);
 	
 	if(gl)
