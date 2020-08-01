@@ -5,8 +5,8 @@ const pdiff = 4;
 		
 function resize_handler()
 {
-	gl.canvas.width  = window.innerHeight - pdiff;
-	gl.canvas.height = window.innerWidth - pdiff; 
+	gl.canvas.width  = window.innerWidth - pdiff;
+	gl.canvas.height = window.innerHeight - pdiff; 
 }
 
 window.onload = function()
