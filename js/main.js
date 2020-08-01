@@ -1,5 +1,5 @@
 var	canvas	= $("#mainCanvas")[0],
-	app		= null;
+	app	= null;
 const pdiff	= 16;
 
 class Application
@@ -21,7 +21,9 @@ class Application
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-	$.getScript('js/handler.js', Function.__proto__);
-	app = new Application();
-	app.mainLoop();
+	$.getScript('js/handler.js', function ()
+	{
+		app = new Application();
+		app.mainLoop();
+	});
 });
