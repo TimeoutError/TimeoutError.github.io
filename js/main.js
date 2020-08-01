@@ -21,7 +21,7 @@ class Application
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-	$.getScript('js/handler.js');
+	$.getScript('js/handler.js', Function.__proto__);
 	app = new Application();
 	app.mainLoop();
 });
