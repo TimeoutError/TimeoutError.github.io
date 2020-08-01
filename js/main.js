@@ -1,5 +1,5 @@
 var	gl = null,
-		canvas = $("#mainCanvas");
+	canvas = $("#mainCanvas");
 		
 function resize_handler()
 {
@@ -9,8 +9,8 @@ function resize_handler()
 
 window.onload = function()
 {
-	alert('Loaded');
 	gl = canvas.getContext('webgl');
+	alert(`GL object: ${gl}`);
 	document.addEventListener('resize', resize_handler);
 	
 	if(gl)
