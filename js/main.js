@@ -1,30 +1,36 @@
-var	gl = null,
-	canvas = $("#mainCanvas")[0];
-	
-const pdiff = 16;
-		
-function resize_handler()
-{
-	gl.canvas.width  = window.innerWidth - pdiff;
-	gl.canvas.height = window.innerHeight - pdiff; 
-}
+var	canvas	= $("#mainCanvas")[0],
+	app = null;
+const pdiff	= 16; 
 
-window.onload = function()
+class Application
 {
-	gl = canvas.getContext('webgl');
-	
-	$(window)
-	.on('resize', resize_handler)
-	.resize();
-	
-	if(gl)
+	constructor()
 	{
-		gl.clearColor(1.0, 1.0, 0.0, 1.0);
-		gl.clear(gl.COLOR_BUFFER_BIT);
-	}
-	else
-	{
-		// Browser doesn't support WebGL.
+		this.gl = canvas.getContext('webgl');
+		
+		$(window)
+		.on('resize', rHandler)
+		.resize();
+		
+		this.gl
+		.clearColor(0.0, 0.0, 0.0, 1.0);
 	}
 	
+	rHandler = function()
+	{
+		if(! this.gl)
+		return;
+	
+		canvas.width  = window.innerWidth - pdiff;
+		canvas.height = window.innerHeight - pdiff; 
+	}
+	
+	function mainLoop()
+	{
+		this.gl
+		.clear(gl.COLOR_BUFFER_BIT);
+	}
 };
+
+app = new Application();
+app.mainLoop();
