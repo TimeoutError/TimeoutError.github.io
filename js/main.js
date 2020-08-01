@@ -1,10 +1,12 @@
 var	gl = null,
 	canvas = $("#mainCanvas")[0];
+	
+const pdiff = 4;
 		
 function resize_handler()
 {
-	gl.width  = window.innerHeight;
-	gl.height = window.innerWidth; 
+	gl.canvas.width  = window.innerHeight - pdiff;
+	gl.canvas.height = window.innerWidth - pdiff; 
 }
 
 window.onload = function()
