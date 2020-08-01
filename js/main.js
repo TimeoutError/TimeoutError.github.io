@@ -16,7 +16,7 @@ class Application
 		.clearColor(0.0, 0.0, 0.0, 1.0);
 	}
 	
-	rHandler = function()
+	rHandler()
 	{
 		if(! this.gl)
 		return;
@@ -25,7 +25,7 @@ class Application
 		canvas.height = window.innerHeight - pdiff; 
 	}
 	
-	function mainLoop()
+	mainLoop()
 	{
 		this.gl
 		.clear(gl.COLOR_BUFFER_BIT);
