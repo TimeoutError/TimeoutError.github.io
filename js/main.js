@@ -20,7 +20,7 @@ class Application
 	}
 };
 
-document.addEventListener('DOMContentLoaded', () {
+document.addEventListener('DOMContentLoaded', () => {
 	$.getScript('handler.js');
 	app = new Application();
 	app.mainLoop();
