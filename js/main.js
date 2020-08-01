@@ -9,7 +9,7 @@ class Application
 		this.gl = canvas.getContext('webgl');
 		
 		$(window)
-		.on('resize', rHandler)
+		.on('resize', this.rHandler)
 		.resize();
 		
 		this.gl
