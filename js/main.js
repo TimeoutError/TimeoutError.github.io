@@ -1,5 +1,5 @@
 var	canvas	= $("#mainCanvas")[0],
-	app = null;
+	app		= null;
 const pdiff	= 16; 
 
 class Application
@@ -19,7 +19,7 @@ class Application
 	rHandler()
 	{
 		if(! this.gl)
-		return;
+			return;
 	
 		canvas.width  = window.innerWidth - pdiff;
 		canvas.height = window.innerHeight - pdiff; 
@@ -27,8 +27,9 @@ class Application
 	
 	mainLoop()
 	{
-		this.gl
-		.clear(gl.COLOR_BUFFER_BIT);
+		this.gl.clear(
+		this.gl.COLOR_BUFFER_BIT
+		);
 	}
 };
 
