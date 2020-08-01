@@ -1,5 +1,5 @@
 var	gl = null,
-	canvas = $("#mainCanvas");
+	canvas = $("#mainCanvas")[0];
 		
 function resize_handler()
 {
