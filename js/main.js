@@ -1,6 +1,6 @@
 var	canvas	= $("#mainCanvas")[0],
 	app		= null;
-const pdiff	= 16; 
+const pdiff	= 16;
 
 class Application
 {
@@ -8,21 +8,8 @@ class Application
 	{
 		this.gl = canvas.getContext('webgl');
 		
-		$(window)
-		.on('resize', this.rHandler)
-		.resize();
-		
 		this.gl
 		.clearColor(0.0, 0.0, 0.0, 1.0);
-	}
-	
-	rHandler()
-	{
-		if(! this.gl)
-			return;
-	
-		canvas.width  = window.innerWidth - pdiff;
-		canvas.height = window.innerHeight - pdiff; 
 	}
 	
 	mainLoop()
@@ -33,5 +20,8 @@ class Application
 	}
 };
 
-app = new Application();
-app.mainLoop();
+document.addEventListener('DOMContentLoaded', () {
+	$.getScript('handler.js');
+	app = new Application();
+	app.mainLoop();
+}, true);
